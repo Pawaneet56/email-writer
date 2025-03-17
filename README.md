@@ -27,9 +27,9 @@ This is a simple AI-powered email generator application that uses **Google Gemin
 ### Chrome Extension in Gmail
 #### Integrated in Gmail's Reply Screen
 ![Gmail Reply Extension](img.png)
-#### AI-Generated Response
+#### Button when Response is getting generated
 ![AI Reply in Gmail](img_2.png)
-#### Tone Selection in Extension
+#### AI generated Response
 ![Tone Selection in Gmail](img_1.png)
 
 ## Installation & Setup
