@@ -100,10 +100,6 @@ This is a simple AI-powered email generator application that uses **Google Gemin
 ## Contribution
 Feel free to contribute! Open an issue or submit a pull request with improvements.
 
-## License
-This project is licensed under the MIT License.
-
----
 ### 🚀 Happy Emailing with AI! 🚀
 
 
