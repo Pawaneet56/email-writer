@@ -28,15 +28,8 @@ public class EmailService {
 
     public String generateEmailReply(EmailRequest emailRequest){
         String prompt=createPrompt(emailRequest);
-        Map<String,Object> requestBody=Map.of(
-                "contents",new Object[]{
-                        Map.of("parts",new Object[]{
-                            Map.of("text",prompt)
-                })
-                 }
-        );
+        Map<String,Object> requestBody=createRequestBody(prompt);
         String url=apiUrl+"?key="+apiKey;
-//        String url=  UriComponentsBuilder.fromPath(apiUrl).queryParam("key",apiKey).toUriString();
         String response=webClient.post()
                 .uri(url).
                 header("Content-Type","application/json")
@@ -44,6 +37,15 @@ public class EmailService {
                 .retrieve().bodyToMono(String.class).block();
         response=extractResponse(response);
         return response;
+    }
+    private Map<String,Object> createRequestBody(String prompt){
+        return Map.of(
+                "contents",new Object[]{
+                        Map.of("parts",new Object[]{
+                                Map.of("text",prompt)
+                        })
+                }
+        );
     }
 
     private String extractResponse(String response) {
