@@ -28,7 +28,7 @@ public class EmailController {
     }
     private final Tika tika = new Tika();
 
-    @PostMapping("/extract")
+    @PostMapping("/summary")
     public ResponseEntity<String> extractContent(@RequestParam("file") MultipartFile file) {
         try (InputStream inputStream = file.getInputStream()) {
             String fileType = tika.detect(file.getBytes());
